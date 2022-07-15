@@ -1,0 +1,58 @@
+{% extends 'authentification/base.html' %}
+
+{% block content %}
+<div class="row" style="margin-top:10%;">
+  <div class="col-lg-3">
+
+  </div>
+  <div class="col-lg-6">
+    <p>Soyez les bienvenus au stimulateur du système de santé béninois.
+        Vous avez une vue configurée selon vos droits d'accès</p>
+    <ul>
+        {% if perms.hopital.view_Depot %}
+            <li><a href="{% url 'patientliste' %}">Consulter les données d'un patient<a/></li>
+        {% endif %}
+
+        {% if perms.hopital.view_RessourceHumaine %}
+            <li><a href="{% url 'constanteliste' %}">Consuler les constantes d'un patient <a/></li>
+        {% endif %}
+
+        {% if perms.hopital.view_Patient %}
+            <li><a href="{% url 'consultationliste' %}">Consulter une activité de consultation d'un patient<a/></li>
+        {% endif %}
+
+        {% if perms.hopital.view_constante %}
+            <li><a href="{% url 'resultatliste' %}">Consulter les résultats d'un patient<a/></li>
+        {% endif %}
+
+        {% if perms.hopital.view_consultation %}
+            <li><a href="{% url 'pronosticlist' %}">Consulter les évaluations post analyses<a/></li>
+        {% endif %}
+
+        {% if perms.hopital.view_resultat %}
+            <li><a href="{% url 'ressourcelist' %}">Consulter les ressources humaines de l'établisement<a/></li>
+        {% endif %}
+
+        {% if perms.hopital.view_pronostic %}
+            <li><a href="{% url 'depotliste' %}">Consulter les dépots de l'établissement<a/></li>
+        {% endif %}
+
+        {% if perms.hopital.view_service_anexe %}
+            <li><a href="{% url 'serviceannexeliste' %}">Consulter
+                les examens de consultations des services annexes<a/></li>
+        {% endif %}
+    </ul>
+
+
+</div>
+ </div>
+  <div class="col-lg-3">
+
+  </div>
+
+</div>
+<div class="container-md hidden">
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'hopital/base.html' %}
+
+{% block title %}
+    Présentation de la vue des patients
+{% endblock %}
+
+{% block content %}
+<div class="container-sm">
+    <h1>La liste des patients consultés</h1>
+
+         {% for patient in patient %}
+            <p>
+                nom : <a href="{% url 'patientdetail' patient.id %}">{{ patient.nom }}</a> au numero
+                id {{ patient.id }}
+            </p>
+            {% if perms.hopital.Patient %}
+            <p>
+                Un patient a eu un an de plus, vous pouvez modifer son age ou d'autres informations
+                <a href="{% url 'changepatient' patient.id %}">[ici]</a>.
+            </p>
+
+        {% endif %}
+         {% endfor %}
+        </ul>
+
+
+</div>
+{% endblock %}

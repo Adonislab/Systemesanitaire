@@ -1,0 +1,23 @@
+{% extends 'hopital/base.html' %}
+
+{% block title %}
+    Detail sur le post analyse
+{% endblock %}
+
+{% block content %}
+<div class="container-sm">
+        <p>Les détails post analyses sur ce patient sont :
+            <ul>
+                <li> Guérison {{ pronostic.get_guerison_display }}</li>
+                <li> Rechute {{ pronostic.get_rechute_display }}</li>
+                <li> Sequelle {{ pronostic.get_sequelle_display }}</li>
+                <li> Deces {{ pronostic.get_deces_display }}</li>
+            </ul>
+        </p>
+
+        <a href="{% url 'pronosticlist' %}">Retour à tous les situations post analyses</a>
+</div>
+{% endblock %}
+
+
+

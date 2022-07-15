@@ -1,0 +1,24 @@
+{% extends 'hopital/base.html' %}
+
+{% block title %}
+    Detail sur les ressources humaines
+{% endblock %}
+
+{% block content %}
+<div class="container-sm">
+        <p>Les détails sur agent sont :
+            <ul>
+                <li> Type d'agent {{ ressource.get_type_agent_display }}</li>
+                <li> Nom {{ ressource.nom }}</li>
+                <li> Prenom {{ ressource.prenom }}</li>
+                <li> Numero {{ ressource.numero }}</li>
+            </ul>
+        </p>
+
+        <a href="{% url 'ressourcelist' %}">Retour à tous les situations post analyses</a>
+
+</div>
+{% endblock %}
+
+
+

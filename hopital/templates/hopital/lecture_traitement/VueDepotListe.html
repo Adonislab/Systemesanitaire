@@ -1,0 +1,43 @@
+{% extends 'hopital/base.html' %}
+
+{% block title %}
+    Présentation des objets disponibles
+{% endblock %}
+
+{% block content %}
+<div class="row" style="margin-top:10%;">
+  <div class="col-lg-3">
+
+  </div>
+  <div class="col-lg-6">
+
+    <h1>La liste des matériels déposés dans l'établissement</h1>
+
+    <ul>
+         {% for depot in Depot %}
+            <li><a href="{% url 'depotdetail' depot.id %}">{{ depot.nom_du_produit }}</a></li>
+            <li><a href="{% url 'serviceannexeliste' %}">Consulter
+                la liste des examens de consultations des services annexes<a/></li>
+            {% if perms.hopital.Depot %}
+                <p>
+                    De nouvelle arrivage de produit sont disponibe dans le centre.
+                    Vous pouvez effectuer une mise à jour rapide des produits
+                    <a href="{% url 'changedepot' depot.id %}">[ici]</a>.
+                </p>
+            {% endif %}
+         {% endfor %}
+
+
+
+    </ul>
+</div>
+  <div class="col-lg-3">
+
+  </div>
+
+</div>
+<div class="container-md hidden">
+
+</div>
+{% endblock %}
+

@@ -1,0 +1,27 @@
+{% extends 'hopital/base.html' %}
+
+{% block title %}
+    Présentation de la listes des ressources haimaines
+{% endblock %}
+
+{% block content %}
+<div class="container-sm">
+    <h1>La liste des ressources humaines de l'établissement</h1>
+
+         {% for ressources in ressource %}
+            <li><a href="{% url 'ressourcelistdetail' %}">{{ ressources.prenom }}</a></li>
+            {% if perms.hopital.RessourceHumaine %}
+                <p>
+                    Vous pouvez effectuer les mises à jour
+                    <a href="{% url 'changeresoourcehumaine' %}">des ressouces humaines</a>
+                </p>
+            {% endif %}
+         {% endfor %}
+
+
+
+
+
+        </ul>
+</div>
+{% endblock %}

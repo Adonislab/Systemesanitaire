@@ -1,0 +1,34 @@
+{% extends 'hopital/base.html' %}
+
+{% block title %}
+    Présentation détaillé du dépôt
+{% endblock %}
+
+{% block content %}
+<div class="row" style="margin-top:10%;">
+  <div class="col-lg-3">
+
+  </div>
+  <div class="col-lg-6">
+
+    <h2>{{ depot.nom_du_produit}}</h2>
+
+    <ul>
+         <li>Nom du produit : {{ depot.nom_du_produit }}</li>
+         <li> Type du produit : {{ depot.get_type_du_produit_display }}</li>
+         <li>Service consulté : {{ depot.get_service_consulter_display }}</li>
+         <li>Nombre en stoke : {{ depot.nombre_de_stoke }}</li>
+         <a href="{% url 'depotliste' %}">Retour à tous les groupes de personnes consultés</a>
+    </ul>
+
+
+</div>
+  <div class="col-lg-3">
+
+  </div>
+
+</div>
+<div class="container-md hidden">
+
+</div>
+{% endblock %}

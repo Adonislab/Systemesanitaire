@@ -1,0 +1,34 @@
+{% extends 'hopital/base.html' %}
+
+{% block title %}
+    Présentation de la consultation du patient
+{% endblock %}
+
+{% block content %}
+<div class="row" style="margin-top:10%;">
+  <div class="col-lg-3">
+
+  </div>
+  <div class="col-lg-6">
+    <h2> La présentation des consultations d'ordre 1 {{ consultation.patient}} sont : </h2>
+
+    <ul>
+         <li>Malaise : {{ consultation.symptome_0 }}</li>
+         <li> Observation : {{ consultation.observation_0 }}</li>
+         <li>Service consulté : {{ consultation.get_service_consulte_display }}</li>
+         <li>Diagnostic : {{ consultation.symdrome_0 }}</li>
+         <a href="{% url 'consultationliste' %}">Retour à tous les groupes de personnes consultés</a>
+    </ul>
+
+</div>
+  <div class="col-lg-3">
+
+  </div>
+
+</div>
+<div class="container-md hidden">
+
+</div>
+
+</div>
+{% endblock %}

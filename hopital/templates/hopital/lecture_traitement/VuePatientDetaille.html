@@ -1,0 +1,23 @@
+{% extends 'hopital/base.html' %}
+
+{% block title %}
+ Detail sur le patient
+{% endblock %}
+
+{% block content %}
+<div class="container-sm">
+        <p>Les détails sur ce patient sont :
+            <ul>
+                <li> nom : {{ detail_patient.nom }}</li>
+                <li> prenom :{{ detail_patient.prenom }}</li>
+                <li>groupe sanguin : {{ detail_patient.get_groupe_sangin_display }}</li>
+                <li>sexe du patient : {{ detail_patient.get_sexe_display }}</li>
+            </ul>
+        </p>
+        <p>
+            Vous pouvez retourner à la liste de
+            <a href="{% url 'patientliste' %}">tous les patients</a>
+        </p>
+
+</div>
+{% endblock %}

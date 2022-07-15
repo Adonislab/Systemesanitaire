@@ -1,0 +1,17 @@
+{% extends 'hopital/base.html' %}
+
+{% block title %}
+    Présentation des constantes des patients
+{% endblock %}
+
+{% block content %}
+<div class="container-sm">
+        <h1>La liste des constantes des patients consultés</h1>
+
+        <ul>
+         {% for constante in constance %}
+            <li><a href="{% url 'constantedetail' constante.id %}">{{ constante.patient }}</a></li>
+         {% endfor %}
+        </ul>
+</div>
+{% endblock %}

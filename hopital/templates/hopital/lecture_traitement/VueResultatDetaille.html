@@ -1,0 +1,19 @@
+{% extends 'hopital/base.html' %}
+
+{% block content %}
+<div class="container-sm">
+Les résultats d'ordre 1 de l'examen de <h2>{{ resultat.patient }}</h2> sont :
+
+
+        <ul>
+             <li>Service consulté : {{ resultat.get_service_consulte_display }}</li>
+             <li>Resultat finale : {{ resultat.resultat_0 }}</li>
+             <li>Maladie : {{ resultat.get_maladie_0_display }}</li>
+             <li>Categorie de la maladie {{ resultat.get_categorie_maladie_0_display }}</li>
+             <li>Prescription {{ resultat.prescription_0 }}</li>
+        </ul>
+
+
+    <p>Pour un <a href="{% url 'resultatliste' %}">retour à tous les groupes</a> de patients consultés</p>
+</div>
+{% endblock %}

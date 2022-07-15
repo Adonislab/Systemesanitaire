@@ -1,0 +1,27 @@
+{% extends 'authentification/base.html' %}
+
+{% block content %}
+<div class="row" style="margin-top:10%;">
+  <div class="col-lg-3">
+
+  </div>
+  <div class="col-lg-6">
+      <h3>Inscription au stimulateur </h3>
+        <p>Le système d'information dans le milieu sanitaire devant être très sécurisé, nous devons
+            appliquer des règles de sécurité très sévère.Nous vous prions d'appliquer à la lettre
+            les instructions suivantes.</p>
+            {% if form.errors %}
+            {{ form.errors }}
+        {% endif %}
+      <form method="post" novalidate>
+        <div class="mb-3">
+
+            {{ form.as_p }}
+            {% csrf_token %}
+
+        </div>
+        <button type="submit" class="btn btn-success">S’inscrire au système de santé</button>
+    </form>
+  </div>
+</div>
+{% endblock content %}

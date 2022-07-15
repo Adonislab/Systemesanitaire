@@ -1,0 +1,62 @@
+{% extends 'authentification/base.html' %}
+
+{% block content %}
+<div class="row" style="margin-top:10%;">
+  <div class="col-lg-3">
+
+  </div>
+  <div class="col-lg-6">
+
+    <p>Soyez les bienvenus au stimulateur du système de santé béninois.
+        Vous avez une vue configurée selon vos droits d'accès</p>
+    <ul>
+
+        {% if perms.hopital.add_Depot %}
+            <li><a href="{% url 'ajoutobjet' %}">Ajout d'objet ou produit au système<a/></li>
+        {% endif %}
+
+        {% if perms.hopital.add_RessourceHumaine %}
+            <li><a href="{% url 'ajoutressourcehumaine' %}">Ajout des ressources humaines au système<a/></li>
+        {% endif %}
+
+        {% if perms.hopital.add_Patient %}
+            <li><a href="{% url 'ajoutpatient' %}">Inscription Patient<a/></li>
+        {% endif %}
+
+        {% if perms.hopital.add_constante %}
+            <li><a href="{% url 'ajoutconstance' %}">Enrégistrement des constantes du patient<a/></li>
+        {% endif %}
+
+        {% if perms.hopital.add_consultation %}
+            <li><a href="{% url 'ajoutconsultation' %}">Examen de consultation du patient<a/></li>
+        {% endif %}
+
+        {% if perms.hopital.add_resultat %}
+            <li><a href="{% url 'ajoutresultat' %}">Enrégistrement des résultats du patient<a/></li>
+        {% endif %}
+
+        {% if perms.hopital.add_pronostic %}
+            <li><a href="{% url 'ajoutprononstic' %}">Evaluation post analyses et résultats<a/></li>
+        {% endif %}
+
+        {% if perms.hopital.add_service_anexe %}
+            <li><a href="{% url 'ajoutconsultationannexe' %}">Examen de consultation annexe d'un patient<a/></li>
+        {% endif %}
+
+
+
+    </ul>
+<div/>
+</div>
+  <div class="col-lg-3">
+
+  </div>
+
+</div>
+<div class="container-md hidden">
+
+</div>
+
+
+
+{% endblock %}

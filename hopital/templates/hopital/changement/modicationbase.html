@@ -1,0 +1,39 @@
+{% extends 'authentification/base.html' %}
+
+{% block content %}
+<<div class="row" style="margin-top:10%;">
+  <div class="col-lg-3">
+
+  </div>
+  <div class="col-lg-6">
+
+    <p>Soyez les bienvenus au stimulateur du système de santé béninois.
+        Vous avez une vue configurée selon vos droits d'accès</p>
+    <ul>
+        {% if perms.hopital.change_Patient %}
+            <li><a href="{% url 'patientliste' %}">Mise à jour des données d'inscription d'un patient<a/></li>
+        {% endif %}
+
+        {% if perms.hopital.change_RessourceHumaine %}
+            <li><a href="{% url 'ressourcelist' %}">Mise à jour des ressources humaines de l'établissement<a/></li>
+        {% endif %}
+
+        {% if perms.hopital.change_Depot %}
+            <li><a href="{% url 'depotliste' %}">Mise à jour des dépôts de l'établissemnt<a/></li>
+        {% endif %}
+
+    </ul>
+
+</div>
+  <div class="col-lg-3">
+
+  </div>
+
+</div>
+<div class="container-md hidden">
+
+</div>
+
+
+</div>
+{% endblock %}

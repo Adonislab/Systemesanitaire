@@ -1,0 +1,34 @@
+{% extends 'hopital/base.html' %}
+
+{% block title %}
+    Présentation des consultations des patients
+{% endblock %}
+
+
+{% block content %}
+<div class="row" style="margin-top:10%;">
+  <div class="col-lg-3">
+
+  </div>
+  <div class="col-lg-6">
+
+    <h1>La liste des patients ayant eu une consultation</h1>
+
+        <ul>
+             {% for consultation in consultation %}
+                <li><a href="{% url 'consultationdetail' consultation.id %}">{{ consultation.patient }}</a></li>
+             {% endfor %}
+        </ul>
+</div>
+  <div class="col-lg-3">
+
+  </div>
+
+</div>
+<div class="container-md hidden">
+
+</div>
+
+</div>
+{% endblock %}
+

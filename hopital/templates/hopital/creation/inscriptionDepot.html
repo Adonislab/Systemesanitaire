@@ -1,0 +1,32 @@
+{% extends 'hopital/base.html' %}       
+
+{% block title %}
+    Enrégistrement des depots dans le magazin
+{% endblock %}
+
+{% block content %}
+<div class="row" style="margin-top:10%;">
+  <div class="col-lg-3">
+
+  </div>
+  <div class="col-lg-6">
+
+    <p>Nous vous prions de renseigner les produits disponibles à la formation sanitaire</p>
+    <div class="mb-3">
+        <form method="post" novalidate>
+            {{ form.as_p }}
+            {% csrf_token %}
+            <button type="submit" class="btn btn-success">Enrégistez</button>
+        </form>
+    </div>
+</div>
+</div>
+  <div class="col-lg-3">
+
+  </div>
+
+</div>
+<div class="container-md hidden">
+
+</div>
+{% endblock %}

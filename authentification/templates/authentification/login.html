@@ -1,0 +1,53 @@
+{% extends 'authentification/base.html' %}
+
+{%block title %}
+ login
+{%endblock%}
+
+
+{% block content %}
+<div class="row" style="margin-top:10%;">
+  <div class="col-lg-3">
+
+  </div>
+  <div class="col-lg-6">
+
+  <p>
+    Un Système d'Information est un environnement bien complexe. En effet, il faut le voir
+    comme un ensemble de ressources, à la fois humaines, matérielles et immatérielles
+    dont le rôle est de collecter, stocker, traiter et distribuer de l’information.
+    Suite au cours, ce stimulateur est concu afin de mettre en pratique le fonctionnement
+    d'un SI dans le domaine sanitaire.
+  </p>
+
+
+  <p>
+    Vous n'êtes pas encore inscire au système de santé béninois.
+    <a href="{% url 'signup' %}">Inscrivez-vous maintenant !</a>
+  </p>
+
+  <form method="post" novalidate>
+  <fieldset>
+    <legend>Formulaire d'authentification pour acceder au stimulateur</legend>
+    <div class="mb-3">
+      {{ form.as_p }}
+      {% csrf_token %}
+      <button type="submit" class="btn btn-success">Se connecter</button>
+      {{ message }}
+    </div>
+  </fieldset>
+  </form>
+
+  </div>
+  <div class="col-lg-3">
+
+  </div>
+
+</div>
+<div class="container-md hidden">
+
+</div>
+
+
+
+{% endblock %}

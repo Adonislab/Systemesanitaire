@@ -1,0 +1,36 @@
+{% extends 'hopital/base.html' %}
+
+{% block title %}
+    Présentation détaillé des constantes du pantients
+{% endblock %}
+
+
+{% block content %}
+<div class="row" style="margin-top:10%;">
+  <div class="col-lg-3">
+
+  </div>
+  <div class="col-lg-6">
+
+    <p>
+        Le patient suivant <h2>{{ constance.patient }}</h2> a pour constance
+        <ul>
+             <li>Poids : {{ constance.poids }}</li>
+             <li>Température : {{ constance.temperature }}</li>
+             <li>Taille : {{ constance.taille }}</li>
+        </ul>
+        <a href="{% url 'constanteliste' %}">Retour à tous les constantes des patients</a>
+    </p>
+
+
+</div>
+</div>
+  <div class="col-lg-3">
+
+  </div>
+
+</div>
+<div class="container-md hidden">
+
+</div>
+{% endblock %}

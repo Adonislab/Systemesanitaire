@@ -1,0 +1,19 @@
+{% extends 'hopital/base.html' %}
+
+{% block title %}
+    Présentation du résultat détaillé de la liste patients en service annexe
+{% endblock %}
+
+{% block content %}
+<div class="container-sm">
+    <h2>Le bilan de la consultation du patient {{ service_anexe.patient }} se présente comme : </h2>
+
+    <ul>
+         <li>Service consulté: {{ service_anexe.get_service_consulte_display }}</li>
+         <li>Situation : {{ service_anexe.situation }}</li>
+         <li>Conseil : {{ service_anexe.conseil }}</li>
+    </ul>
+
+    <p><a href="{% url 'serviceannexeliste' %}">Retour à tous les groupes de patient</a></p>
+</div>
+{% endblock %}

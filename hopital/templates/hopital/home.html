@@ -1,0 +1,58 @@
+{% extends 'authentification/base.html' %}
+
+{% block content %}
+<div class="row" style="margin-top:10%;">
+  <div class="col-lg-3">
+
+  </div>
+  <div class="col-lg-6">
+    <p>Soyez les bienvenus au stimulateur du système de santé béninois.
+        Vous avez une vue configurée selon vos droits d'accès</p>
+
+    <p>
+        L’apparition d’Internet a eu un impact fort sur l’évolution technique des systèmes d´informations
+        et de ses enjeux pour les entreprises. Aujourd'hui, le SI permet d'automatiser et de dématérialiser
+        quasiment toutes les opérations incluses dans les activités ou procédures de notre vie quotidienne
+        personnelle ou professionnelle. Si nous demandons d’expliquer ce qu’est un véhicule, il y a de fortes
+        chances que vous me disiez que c’est un moyen de transport permettant d’aller d’un point A à un point
+        B. Vous avez parfaitement raison et sans le savoir, vous venez de me donner le rôle du système
+        d’information. Le SI est le véhicule des différents services d’une entreprise. En structurant
+        les échanges, il les coordonne ainsi que les activités de l’organisation. Il lui permet ainsi
+        d'atteindre ses objectifs stratégiques.
+    </p>
+    <p>
+        Comme nous venons de le voir, un SI est formé de l'ensemble de ressources (les personnes,
+        les matériels, les logiciels, les procédures) permettant de mener les actions suivantes sur
+        l'information :  (1) COLLECTER => (2) STOCKER => (3) TRAITER => (4) DIFFUSER
+        Quel que soit son rôle et ce pourquoi il a était conçu, un SI est toujours construit sur la
+        base des processus métiers d’une organisation. En clair, on se base sur la réalité, c’est-à-dire
+        comment fonctionnent et travaillent les équipes de l’entreprise pour dire au SI ce qu’il doit faire
+        et comment il doit le faire. Il n’est pas rare qu’un SI soit en contact avec d’autres SI.
+        Par exemple, lorsque les entreprises françaises ont pour obligation de faire tous les mois la
+        Déclaration Sociale Nominative (DSN), les entreprises ne communiquent pas les données de leurs employés manuellement à l’administration. Leur logiciel de paie transmet directement ces données à l’administration en utilisant une API.
+        Dans ce cas, les SI en question doivent être capables de communiquer ensemble.
+        On parle alors d’interopérabilité. Cette interopérabilité est possible grâce aux API. Ainsi, nous ferons
+        de la :
+    </p>
+    <ul>
+        <li><a href="{% url 'creationdonnee' %}">Création de donnée <a/></li>
+
+        <li><a href="{% url 'statistique' %}">Visualisation de données patients<a/></li>
+
+        <li><a href="{% url 'modificationbase' %}">Modification de données<a/></li>
+
+        <li><a href="{% url 'visualisationdonne' %}">Visualisation rapide des analyses de données patients<a/></li>
+    </ul>
+</div>
+  <div class="col-lg-3">
+
+  </div>
+
+</div>
+<div class="container-md hidden">
+
+</div>
+</div>
+
+
+{% endblock %}

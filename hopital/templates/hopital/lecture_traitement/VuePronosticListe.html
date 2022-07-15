@@ -1,0 +1,17 @@
+{% extends 'hopital/base.html' %}
+
+{% block title %}
+    Présentation des résultats post analyses
+{% endblock %}
+
+{% block content %}
+<div class="container-sm">
+    <h1>La liste des pronostics des patients ayant été consultés et ayant eu un résultat</h1>
+
+        <ul>
+         {% for pronostic in pronostic %}
+            <li><a href="{% url 'pronosticdetail' pronostic.id %}">{{ pronostic.patient }}</a></li>
+         {% endfor %}
+        </ul>
+</div>
+{% endblock %}

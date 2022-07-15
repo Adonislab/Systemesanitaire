@@ -1,0 +1,18 @@
+
+{% extends 'hopital/base.html' %}
+
+{% block title %}
+    Présentation du résultat de la liste patients en service annexe
+{% endblock %}
+
+{% block content %}
+<div class="container-sm">
+    <h1>La liste des patients ayant eu un service annexe dans l'établissment</h1>
+
+    <ul>
+         {% for service in service %}
+            <li><a href="{% url 'serviceannexedetail' service.id %}">{{ service.patient }}</a></li>
+         {% endfor %}
+    </ul>
+</div>
+{% endblock %}
