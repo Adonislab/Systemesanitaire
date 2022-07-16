@@ -1,0 +1,31 @@
+        {% if perms.hopital.add_Depot %}
+            <a href="{% url 'ajout_depot' %}">Ajouter un object dans le système</a>
+        {% endif %}
+
+        {% if perms.hopital.add_RessourceHumaine %}
+            <a href="{% url 'ajout_ressource' %}">Ajouter une ressource humaine à l'hopital</a>
+        {% endif %}
+
+        {% if perms.hopital.add_Patient %}
+            <a href="{% url 'ajout_patient' %}">Ajouter un patient</a>
+        {% endif %}
+
+        {% if perms.hopital.add_constante %}
+            <a href="{% url 'ajout_constance' %}">Ajouter une constance pour un patient</a>
+        {% endif %}
+
+        {% if perms.hopital.add_consultation %}
+            <a href="{% url 'ajout_consultation' %}">Ajouter la consultation du patient</a>
+        {% endif %}
+
+        {% if perms.hopital.add_resultat %}
+            <a href="{% url 'ajout_resultat' %}">Ajouter les résultats du patient</a>
+        {% endif %}
+
+        {% if perms.hopital.add_service_anexe %}
+            <a href="{% url 'ajout_annexe' %}">Ajouter un patient ayant demander un service</a>
+        {% endif %}
+
+        {% if perms.hopital.add_service_anexe %}
+            <a href="{% url 'ajout_annexe' %}">Ajouter un patient ayant demander un service</a>
+        {% endif %}
